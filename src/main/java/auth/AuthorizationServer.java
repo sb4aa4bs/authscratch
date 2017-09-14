@@ -25,6 +25,7 @@ class AuthorizationServer extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+    	System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&& clientDetailsService :::: " /*+clientDetailsService.toString()*/);
         clients.withClientDetails(clientDetailsService);
     }
 
