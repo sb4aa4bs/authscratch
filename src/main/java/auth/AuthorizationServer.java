@@ -25,7 +25,9 @@ class AuthorizationServer extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+    	System.err.println("&&&&&&&&&&&&&&&&&&&&&&&&& clientDetailsService :::: " /*+clientDetailsService.toString()*/);
         clients.withClientDetails(clientDetailsService);
+    	//clients.inMemory().withClient("html5").secret("password").authorizedGrantTypes("password").scopes("openid");
     }
 
     @Override

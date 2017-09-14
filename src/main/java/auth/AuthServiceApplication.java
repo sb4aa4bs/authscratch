@@ -102,10 +102,11 @@ public class AuthServiceApplication {
     @Bean
     CommandLineRunner data(ClientRepository clientRepository,
                            AccountRepository accountRepository) {
+    	System.err.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         return args -> {
 
             Stream.of("jlong,spring", "dsyer,cloud", "pwebb,boot", "mminella,batch", "rwinch,security")
-                    .map(s -> s.split(","))
+                    .map(tuple -> tuple.split(","))
                     .forEach(tuple -> accountRepository.save(new Account(tuple[0], tuple[1], true)));
 
             Stream.of("acme,acmesecret")
